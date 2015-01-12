@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically): #THIS IS THE WAY TO GO!
     resources :creatures
 
+    # get '*path' => redirect('/404.html')
+    get '*path', to: "application#not_found"
+
   # Example resource route with options:
   #   resources :products do
   #     member do

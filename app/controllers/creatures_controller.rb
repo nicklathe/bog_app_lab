@@ -1,11 +1,12 @@
 class CreaturesController < ApplicationController
+  before_action :locate_creature, only: [:show, :edit, :update]
 
   def index
     @creature_list = Creatures.all
   end
 
   def new
-    @creatures = Creatures.new
+    @creature = Creatures.new
   end
 
   def edit
@@ -14,14 +15,17 @@ class CreaturesController < ApplicationController
 
   def create
     # render json: params
+    @creature = Creatures.create(creatures_params)
 
-    #RAILS WAY
-    Creatures.create(creatures_params)
-    redirect_to creatures_path
+    if @creature.save
+      redirect_to creatures_path
+    else
+      render 'new'
+    end
   end
 
   def update
-    @creature = Creatures.find(params[:id])
+    @creature = Creatures.find_by_id(params[:id])
 
     if @creature.update(creatures_params)
       redirect_to @creature
@@ -30,17 +34,16 @@ class CreaturesController < ApplicationController
     end
   end
 
-  def creatures_params
-    params.require(:creatures).permit(:name,:desc)
-  end
-
   def show
-    @creature = Creatures.find(params[:id])
+    @creature = Creatures.find_by_id(params[:id])
+
     list = flickr.photos.search :text => @creature.name, :sort => "relevance"
 
     @results = list.map do |photo|
       FlickRaw.url_s(photo)
     end
+
+
   end
 
   def destroy
@@ -48,6 +51,18 @@ class CreaturesController < ApplicationController
   @creature.destroy
 
   redirect_to creatures_path
+  end
+
+private
+
+  def creatures_params
+    params.require(:creatures).permit(:name,:desc)
+  end
+
+  def locate_creature
+    not_found unless @creature = Creatures.find_by_id(params[:id])
+      # redirect_to '/404.html'
+    # end
   end
 
 end

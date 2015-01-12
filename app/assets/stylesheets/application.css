@@ -18,7 +18,8 @@ h1{
   padding-bottom: 50px;
   padding-top: 50px;
   color: #fff !important;
-  font-family: 'Exo', sans-serif !important;
+  /*font-family: 'Exo', sans-serif !important;*/
+  font-family: 'Julius Sans One', sans-serif !important;
 }
 
 h1#creature-desc{
@@ -29,37 +30,47 @@ h1#creature-desc{
   padding-bottom: 50px;
   font-size: 20px;
   color: #fff !important;
-  font-family: 'Exo', sans-serif !important;
+  /*font-family: 'Exo', sans-serif !important;*/
+  font-family: 'Julius Sans One', sans-serif !important;
 }
 
 #desc-p{
   font-size: 20px;
   color: #fff !important;
   margin-top: 50px;
-  font-family: 'Exo', sans-serif !important;
+  /*font-family: 'Exo', sans-serif !important;*/
+  font-family: 'Julius Sans One', sans-serif !important;
 }
 
 #creature-desc-p{
   margin-top: 10px;
   font-size: 20px;
   color: #fff !important;
-  font-family: 'Exo', sans-serif !important;
+  /*font-family: 'Exo', sans-serif !important;*/
+  font-family: 'Julius Sans One', sans-serif !important;
 }
 
 nav.navbar.navbar-default {
-  /*background-color: #312A2A;*/
   border-radius: 0;
   border: none;
-  background-color: #BDBDBD;
+  background-color: rgba(255,255,255,0.5);
   color: #000;
 }
 
 .navbar-nav > li > a{
-    color: #000 !important;
+  color: #000 !important;
+}
+
+.navbar-nav > li > a:hover{
+  color: #DEDEDE !important;
 }
 
 .navbar-brand{
   color: #000 !important;
+}
+
+.navbar-brand:hover{
+  color: #DEDEDE !important;
 }
 
 body{
@@ -100,9 +111,8 @@ td{
 
 .outer{
   margin-top: 50px;
-  height: 500px;
   background-color: rgba(0,0,0,0.3);
-  /*border-radius: 50px;*/
+  padding-bottom: 100px;
 }
 
 .index-outer{
@@ -110,12 +120,15 @@ td{
   min-height: 350px;
   background-color: rgba(0,0,0,0.3);
   padding-bottom: 50px;
-  /*border-radius: 50px;*/
 }
 
-/*.upper-form{
-  border-bottom-right-radius: 0;
-}*/
+#error_explanation{
+  background-color: #FF0000;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
 
 
 
