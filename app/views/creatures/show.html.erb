@@ -2,6 +2,12 @@
   <div class="col-md-12 text-center">
     <h1 id="creature-desc"><%= @creature.name %></h1>
     <p id="creature-desc-p">Description: <%= @creature.desc %></p>
+    <p id="tag-p">
+      <b>Tags: </b>
+      <% @creature.tags.each do |tag|%>
+      <%= link_to tag.name, tag_path(tag.name) %>
+      <% end %>
+    </p>
   </div>
   <div class="col-md-12 text-center">
     <% @results[0..20].each do |photo| %>

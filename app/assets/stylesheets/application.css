@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap-tagsinput
  */
 
 h1{
@@ -129,6 +130,21 @@ td{
   margin-bottom: 15px;
 }
 
+label{
+  color: #fff;
+}
+
+#tag-p{
+  color: #fff;
+}
+
+input.tagcloud.btn{
+  margin: 10px;
+}
+
+.bootstrap-tagsinput{
+  width: 300px;
+}
 
 
 

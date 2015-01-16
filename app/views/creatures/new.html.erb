@@ -18,11 +18,11 @@
     </div>
     <% end %>
 
-    <%= form_for @creature, url: creatures_path, html: {class: "form"} do |f| %>
-      <%= f.text_field :name, :placeholder => "Creature Name", :class => "form-control" %>
-      <br>
-      <%= f.text_area :desc, :placeholder => "Description", :class => "form-control" %>
-      <br>
+    <%= bootstrap_form_for @creature do |f| %>
+      <%= f.text_field :name, :placeholder => "Creature Name" %>
+      <%= f.text_area :desc, :placeholder => "Description" %>
+
+      <%= f.text_field :tag_ids, :placeholder => "Enter some tags!", :value => "", 'data-role'=>'tagsinput' %>
       <%= f.submit :class => "btn btn-default btn-new" %>
     <% end %>
   </div>

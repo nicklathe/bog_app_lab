@@ -18,6 +18,13 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically): #THIS IS THE WAY TO GO!
     resources :creatures
+    get 'creatures/tag/:tag' => 'creatures#tag', as: :tag
+    get 'creatures/tags' => 'creatures#tags'
+    get 'tags' => 'tags#index'
+    # get 'tags/new' => 'tags#new'
+    # post 'tags' => 'tags#create'
+    # get 'tags/:id/edit' => 'tags#edit'
+    # patch 'tags/:id' => 'tags#update'
 
     # get '*path' => redirect('/404.html')
     get '*path', to: "application#not_found"
