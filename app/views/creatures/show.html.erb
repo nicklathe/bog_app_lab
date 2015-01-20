@@ -10,7 +10,7 @@
     </p>
   </div>
   <div class="col-md-12 text-center">
-    <% @results[0..20].each do |photo| %>
+    <% @results[1..24].each do |photo| %>
     <a href="<%=photo.remove('_s')%>"><%= image_tag photo %></a>
     <% end %>
   </div>
